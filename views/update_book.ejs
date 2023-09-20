@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Library</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+	</head>
+	<body class="bg-dark text-white">
+		<%- include('./partials/navbar') %>
+		<h1 class="text-light text-center m-5">Update Book with ID: <%- data._id %></h1>
+		<div class="d-flex justify-content-center form-floating-padding-x">
+			<div>
+				<form action="/<%- data._id %>?_method=PUT" method="POST" class="mt-5">
+					<div class="mb-3">
+						<label class="form-label" for="name">Name</label>
+						<input type="text" class="form-control" id="name" name="name" value="<%- data.name %>" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="author">Author</label>
+						<input type="text" class="form-control" id="author" name="author" value="<%- data.author %>" required />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="price">Name</label>
+						<input type="text" class="form-control" id="price" name="price" value="<%- data.price %>" required />
+					</div>
+					<br />
+					<button type="submit" class="btn btn-success">Update</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
